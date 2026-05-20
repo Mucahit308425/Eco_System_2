@@ -1,0 +1,121 @@
+/* Custom Styles for EcoConnect */
+
+:root {
+    --primary-green: #2d6a4f; /* Eco theme main color */
+    --light-green: #d8f3dc;
+    --dark-green: #1b4332;
+    --bg-light: #fcfdfc;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--dark-green);
+}
+
+/* Customizing Bootstrap Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-green) !important;
+}
+
+/* Custom Buttons (Overriding Bootstrap defaults) */
+.btn-eco {
+    background-color: var(--primary-green);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 10px 25px;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.btn-eco:hover {
+    transform: translateY(-3px);
+    background-color: var(--dark-green);
+    color: white;
+}
+
+/* Feature & Post Cards */
+.card {
+    border: none !important;
+    border-radius: 20px !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.post-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+    border-radius: 16px;
+}
+
+
+
+.card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* Hero Section Branding */
+.hero-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--light-green) 0%, #ffffff 100%);
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+/* Responsive Images */
+.img-fluid {
+    border-radius: 20px;
+}
+
+/* Modal */
+
+.modal-backdrop.show {
+    opacity: 0.85 !important;
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    animation: modalPop 0.25s ease-out;
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-body img {
+    border-radius: 15px;
+}
+
+/* subtle hover lift on cards */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* disable scroll when modal is open (Bootstrap handles body, but reinforce UX) */
+body.modal-open {
+    overflow: hidden;
+}
